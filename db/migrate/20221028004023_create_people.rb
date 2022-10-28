@@ -5,10 +5,11 @@ class CreatePeople < ActiveRecord::Migration[6.0]
       t.string :last_name, null: false
       t.date :birth_date, null: false
       t.date :death_date
-      t.string :gender
+      t.string :gender, null: false
       t.string :email
       t.string :uuid, null: false
       t.datetime :deleted_at
+      
       t.timestamps null: false
     end
   end

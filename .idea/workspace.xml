@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0484bcc-a965-4b6b-8112-84c68e18a752" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/person.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/person.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20221028004023_create_people.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221028004023_create_people.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20221028004043_create_addresses.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221028004043_create_addresses.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20221028010810_create_careers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221028010810_create_careers.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666914861818</updated>
-      <workItem from="1666914873994" duration="2983000" />
+      <workItem from="1666914873994" duration="6022000" />
     </task>
     <servers />
   </component>

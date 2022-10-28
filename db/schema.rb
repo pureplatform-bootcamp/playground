@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_10_28_010810) do
     t.string "address2"
     t.string "city", null: false
     t.string "state", null: false
-    t.string "zip", null: false
+    t.string "zip_code", null: false
     t.boolean "primary", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,13 +26,16 @@ ActiveRecord::Schema.define(version: 2022_10_28_010810) do
   end
 
   create_table "careers", force: :cascade do |t|
+    t.integer "person_id", null: false
     t.string "company_name", null: false
+    t.string "industry", null: false
     t.string "title", null: false
     t.date "date_started", null: false
-    t.date "date_ended", null: false
+    t.date "date_ended"
     t.decimal "annual_wage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_careers_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_10_28_010810) do
     t.string "last_name", null: false
     t.date "birth_date", null: false
     t.date "death_date"
-    t.string "gender"
+    t.string "gender", null: false
     t.string "email"
     t.string "uuid", null: false
     t.datetime "deleted_at"
