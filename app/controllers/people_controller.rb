@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  def index
-    @people = Person.alive_people
-  end
+	def index
+		@people = Person.all
+	end
 end
