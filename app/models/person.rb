@@ -5,6 +5,7 @@ class Person < ApplicationRecord
 	has_many :careers, dependent: :destroy
 	
 	before_validation :generate_uuid
+	scope :female_only, -> {where(gender: 'Female')}
 	
 	private
 	
