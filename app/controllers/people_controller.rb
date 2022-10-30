@@ -1,10 +1,9 @@
 class PeopleController < ApplicationController
-
-def gender
+ def gender
     @gender = Person.female_only
-end
+ end
 
-def index
+ def index
    @people = Person.all
  end
 end
