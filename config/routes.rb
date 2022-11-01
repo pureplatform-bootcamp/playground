@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :people do
-    collection do
-      get 'male'
-    end
-  end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+ get '/people', :to => 'people#index'
+ get '/people/dead', :to => 'people#dead'
+ get '/people/Females', :to => 'people#gender'
+ get '/people/alive', to: 'people#alive'
+ get '/people/male', to: 'people#male'
+
 end
