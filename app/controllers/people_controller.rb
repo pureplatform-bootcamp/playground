@@ -14,4 +14,17 @@ class PeopleController < ApplicationController
  def male
    @male = Person.where(gender: "Male")
  end
+  
+  def create
+    person = Person.new(person_params)
+    unless person.save
+      raise person.errors.full_messages
+    end
+    render json: {success: true, person: person}, status: :ok
+  end
+  
+  private
+    def person_params
+      params.require(:person).permit(:first_name, :last_name, :birth_date, :gender, :email)
+    end
 end
