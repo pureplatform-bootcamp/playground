@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 			get :male
 		end
 	end
+
+  resources :books
 end
