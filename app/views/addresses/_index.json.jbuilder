@@ -1,0 +1,10 @@
+json.person_id a.person_id
+json.address1 a.address1
+json.address2 a.address2
+json.city a.city
+json.state a.state
+json.zip_code a.zip_code
+json.primary a.primary
+json.created_at a.created_at
+json.updated_at a.updated_at
+json.person_id a.person_id
