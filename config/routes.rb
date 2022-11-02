@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
- get '/people', :to => 'people#index'
- get '/people/dead', :to => 'people#dead'
- get '/people/Females', :to => 'people#gender'
- get '/people/alive', to: 'people#alive'
- get '/people/male', to: 'people#male'
-
+	resources :people, only: [:index, :create] do
+		collection do
+			get :dead
+			get :females
+			get :alive
+			get :male
+		end
+	end
 end
