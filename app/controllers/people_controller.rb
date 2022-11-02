@@ -11,4 +11,7 @@ class PeopleController < ApplicationController
  def alive
   @alive = Person.alive_people
  end
+ def male
+   @male = Person.where(gender: "Male")
+ end
 end
