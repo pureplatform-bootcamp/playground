@@ -8,7 +8,7 @@ class CareersController < ApplicationController
       end
 private
 def career_params
-    params.require(:careers).permit(:person_id, :company_name, :industry, :title, :date_started)
+    params.require(:career).permit(:person_id, :company_name, :industry, :title, :date_started)
 end
 end
 
