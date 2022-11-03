@@ -6,9 +6,11 @@ Rails.application.routes.draw do
 			get :females
 			get :alive
 			get :male
+			get :search
 		end
 	end
 
   resources :books
 	resources :addresses
+  get 'people/search/:search_term', to: 'people#search'
 end
