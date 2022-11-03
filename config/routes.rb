@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 		end
 	end
 resources :books
+resources :books
+resources :careers
+
 end
