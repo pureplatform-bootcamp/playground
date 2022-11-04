@@ -18,9 +18,14 @@ class AddressesController < ApplicationController
   end
 
 
+  def index
+    @addresses = Address.all
+end
+
 # Params
 private
   def address_params
     params.require(:address).permit(:person_id, :address1, :city, :state, :zip_code)
   end
+
 end
