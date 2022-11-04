@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 			get :females
 			get :alive
 			get :male
+			get :search
 		end
 	end
 resources :books
-resources :books
 resources :careers
-
+	
+get 'people/search/:search_term', to: 'people#search'
 end
