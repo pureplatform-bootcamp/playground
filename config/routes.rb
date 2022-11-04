@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+    resources :addresses, only: [:index]
+    resources :phones, only: [:index, :create, :update]
 	resources :people, only: [:index, :create] do
 		collection do
 			get :dead
@@ -8,4 +9,8 @@ Rails.application.routes.draw do
 			get :male
 		end
 	end
+resources :books
+resources :books
+resources :careers
+
 end
