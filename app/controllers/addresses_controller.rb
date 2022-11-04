@@ -13,12 +13,7 @@ class AddressesController < ApplicationController
     unless address == true
       raise address.errors.full_messages
     end
-      address.update(
-        person_id: params[:address][:person_id],
-        address1: params[:address][:address1],
-        city: params[:address][:city],
-        state: params[:address][:state],
-        zip_code: params[:address][:zip_code])
+      address.update(address_params)
         render json: {success: true, address: address}, status: :ok
   end
 
