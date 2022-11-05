@@ -12,6 +12,13 @@ def create
 
     render json: {success: true}, status: :ok
 end
+def destroy
+   phone = Phone.find(params[:id])
+   Phone.destroy
+   render json: {success: true}, status: :ok
+
+ end
+
 private
  def phone_params
     params.require(:phone).permit(:person_id, :phone_number, :phone_type, :primary)

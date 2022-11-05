@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     resources :addresses, only: [:index]
-    resources :phones, only: [:index, :create, :update]
+    resources :phones, only: [:index, :create, :update, :destroy]
 	resources :people, only: [:index, :create] do
 		collection do
 			get :dead
