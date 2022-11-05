@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 			get :females
 			get :alive
 			get :male
+			post :filter_by_state
 		end
 	end
 

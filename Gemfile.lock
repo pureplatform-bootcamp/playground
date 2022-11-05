@@ -96,8 +96,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-linux)
-      racc (~> 1.4)
     puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.6.0)
