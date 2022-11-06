@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0484bcc-a965-4b6b-8112-84c68e18a752" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/packs/src/people_index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/packs/src/shared/tables/material_table.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/packs/src/shared/tables/tableIcons.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/people_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/people_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/routes/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/packs/routes/routes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/hello_react.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ssf5957/workspace/personal/address_book",
+    "last_opened_file_path": "/Users/ssf5957/workspace/personal/address_book/app/packs/src/shared",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -70,6 +72,13 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/packs/src/shared" />
+      <recent name="$PROJECT_DIR$/app/packs/src" />
+      <recent name="$PROJECT_DIR$/app/packs" />
+    </key>
+  </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
       <list>
@@ -324,7 +333,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666914861818</updated>
       <workItem from="1666914873994" duration="9235000" />
-      <workItem from="1667352332834" duration="2559000" />
+      <workItem from="1667352332834" duration="12247000" />
     </task>
     <servers />
   </component>

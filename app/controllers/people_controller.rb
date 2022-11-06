@@ -1,4 +1,9 @@
 class PeopleController < ApplicationController
+  def search
+    term = params[:search_term]
+    @results = Person.all.where("lower(first_name) LIKE ?", "%#{term.downcase}%")
+    render json: {results: @results}, status: :ok
+  end
   def index
     @people = Person.all
   end
@@ -31,4 +36,6 @@ class PeopleController < ApplicationController
     def person_params
       params.require(:person).permit(:first_name, :last_name, :birth_date, :gender, :email, addresses_attributes: [:state])
     end
+
+
 end
