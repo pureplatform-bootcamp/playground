@@ -20,7 +20,6 @@ class AddressesController < ApplicationController
   def destroy
     address = Address.find(params[:id])
     address.destroy
-    flash[:success] = "The to-do item was successfully destroyed."
     render json: { success: true }, status: :ok
   end
 
