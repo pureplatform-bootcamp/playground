@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def new
     @book = Book.new
@@ -14,6 +13,24 @@ class BooksController < ApplicationController
       else
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def update
+    @book = Book.find(params[:id])
+
+    if @book.present?
+      @book.update(book_params)
+      render json: @book, status: :ok
+    end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+
+    if @book.present?
+      @book.delete
+      render json: {}, status: :no_content
     end
   end
 
