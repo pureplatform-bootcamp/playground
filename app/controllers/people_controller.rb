@@ -20,6 +20,10 @@ class PeopleController < ApplicationController
    @male = Person.where(gender: "Male")
  end
 
+ def filter_by_state
+   @filter = Person.joins(:addresses).where(addresses: {state: params[:state]})
+ end
+
   def create
     person = Person.new(person_params)
     unless person.save
@@ -30,7 +34,7 @@ class PeopleController < ApplicationController
 
   private
     def person_params
-      params.require(:person).permit(:first_name, :last_name, :birth_date, :gender, :email)
+      params.require(:person).permit(:first_name, :last_name, :birth_date, :gender, :email, addresses_attributes: [:state])
     end
 
 

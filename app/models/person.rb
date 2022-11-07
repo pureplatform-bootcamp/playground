@@ -3,7 +3,8 @@ class Person < ApplicationRecord
 	has_many :addresses, dependent: :destroy
 	has_many :phones, dependent: :destroy
 	has_many :careers, dependent: :destroy
-	
+	accepts_nested_attributes_for :addresses
+
   # Validaion
 	before_validation :generate_uuid
 
@@ -17,4 +18,5 @@ class Person < ApplicationRecord
 		def generate_uuid
 			self.uuid = SecureRandom.hex
 		end
+
 end
