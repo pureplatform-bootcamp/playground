@@ -1,4 +1,8 @@
 class CareersController < ApplicationController
+  def index
+  @career = Career.all
+  end
+  
     def create
         career = Career.new(career_params)
         unless career.save
