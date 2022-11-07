@@ -1,11 +1,11 @@
 class AddressesController < ApplicationController
-# Actions
+  # Actions
   def create
     address = Address.new(address_params)
     unless address.save
       raise address.errors.full_messages
     end
-    render json: {success: true, address: address}, status: :ok
+    render json: { success: true, address: address }, status: :ok
   end
 
   def update
@@ -13,19 +13,24 @@ class AddressesController < ApplicationController
     unless address == true
       raise address.errors.full_messages
     end
-      address.update(address_params)
-        render json: {success: true, address: address}, status: :ok
+    address.update(address_params)
+    render json: { success: true, address: address }, status: :ok
   end
 
+  def destroy
+    address = Address.find(params[:id])
+    address.destroy
+    render json: { success: true }, status: :ok
+  end
 
   def index
     @addresses = Address.all
-end
+  end
 
-# Params
-private
+  # Params
+  private
+
   def address_params
     params.require(:address).permit(:person_id, :address1, :city, :state, :zip_code)
   end
-
 end
