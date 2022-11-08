@@ -2,7 +2,7 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import { render } from 'react-dom';
 import React from 'react';
-import App from 'src/app'
+import App from 'components/app'
 
 Rails.start()
 ActiveStorage.start()

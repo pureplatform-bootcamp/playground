@@ -45,7 +45,6 @@ export default class PhonesIndex extends React.Component {
                   page: result.page - 1,
                   totalCount: result.total,
                 });
-                window.breadcrumb.addBreadcrumb(result.breadcrumb);
               });
           })
         }

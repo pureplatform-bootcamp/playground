@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: c4f3eaf8a30127d077db9db009f99929d01217f2
+  revision: 05a5e1e811d693e64cc9e3067ca1affd826be96e
   branch: main
   specs:
     faker (3.0.0)
@@ -194,7 +194,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (6.0.0.rc.6)
+    webpacker (5.4.3)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -202,7 +202,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.4)
+    zeitwerk (2.6.5)
 
 PLATFORMS
   arm64-darwin-21
@@ -221,12 +221,12 @@ DEPENDENCIES
   sass-rails (>= 6)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.5, >= 1.5.3)
   turbolinks (~> 5)
   tzinfo-data
   wdm (>= 0.1.0)
   web-console (>= 3.3.0)
-  webpacker (~> 6.0.0.rc.5)
+  webpacker (~> 5.4.3)
 
 RUBY VERSION
    ruby 3.0.4p208
