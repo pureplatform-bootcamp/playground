@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0484bcc-a965-4b6b-8112-84c68e18a752" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/packs/src/people_index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/packs/src/shared/tables/material_table.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/packs/src/shared/tables/tableIcons.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/components/people_index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/packs/routes/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/packs/routes/routes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/packs/src/hello_react.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/entrypoints/application.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/application.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/routes/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/routes/routes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/app.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/people_index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/phones_index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/phones_index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/shared/tables/material_table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/shared/tables/material_table.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packs/src/shared/tables/tableIcons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/components/shared/tables/tableIcons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/webpack" beforeDir="false" afterPath="$PROJECT_DIR$/bin/webpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack/development.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpacker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +77,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ssf5957/workspace/personal/address_book/app/packs/src/shared",
+    "last_opened_file_path": "/Users/ssf5957/workspace/personal/address_book/app",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -74,9 +87,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/packs/src/shared" />
       <recent name="$PROJECT_DIR$/app/packs/src" />
       <recent name="$PROJECT_DIR$/app/packs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/javascript/packs" />
+      <recent name="$PROJECT_DIR$/app/javascript/components" />
+      <recent name="$PROJECT_DIR$/app/javascript" />
     </key>
   </component>
   <component name="RubyModuleManagerSettings">
@@ -333,7 +352,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666914861818</updated>
       <workItem from="1666914873994" duration="9235000" />
-      <workItem from="1667352332834" duration="12247000" />
+      <workItem from="1667352332834" duration="19377000" />
     </task>
     <servers />
   </component>
