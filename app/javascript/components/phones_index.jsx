@@ -41,7 +41,7 @@ export default class PhonesIndex extends React.Component {
               .then((response) => response.json())
               .then((result) => {
                 resolve({
-                  data: result.people,
+                  data: result.phones,
                   page: result.page - 1,
                   totalCount: result.total,
                 });
