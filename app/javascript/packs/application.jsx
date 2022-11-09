@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 });
 
-var componentRequireContext = require.context("src", true);
+var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
