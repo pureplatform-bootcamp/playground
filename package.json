@@ -18,7 +18,6 @@
     "jquery": "^3.6.0",
     "material-table": "^1.69.3",
     "moment": "^2.29.1",
-    "notistack": "^1.0.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-barcode": "^1.4.1",

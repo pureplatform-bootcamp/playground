@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PeopleIndex from "../src/people_index";
-import PhonesIndex from "../src/phones_index";
+import PeopleIndex from "src/people_index";
+import PhonesIndex from "src/phones_index";
 
 export default (
   <Router>
