@@ -1,14 +1,34 @@
 import React from 'react';
 import Table from './shared/tables/material_table';
+import $ from "jquery";
 
 export default class PeopleIndex extends React.Component  {
+
+	handleCreate = (newData) => {
+		let self = this;
+
+		const data = {person: {first_name: newData.first_name, last_name: newData.last_name, birth_date: newData.birth_date, gender: newData.gender, email: newData.email}}
+		$.ajax({
+			url: `/people`,
+			type: 'POST',
+			data: data,
+			dataType: 'json',
+			success: function (response) {
+				console.log('success')
+			},
+			error: function (response) {
+				console.log(response.responseJSON.error)
+
+			},
+		});
+	}
 
 	render() {
 		const columns = [
 			{ title: 'First Name', field: 'first_name' },
 			{ title: 'Last Name', field: 'last_name' },
 			{ title: 'Birth date', field: 'birth_date' },
-			{ title: 'Death date', field: 'death_date' },
+			{ title: 'Death date', field: 'death_date', editable: 'never' },
 			{ title: 'Gender', field: 'gender' },
 			{ title: 'Email', field: 'email' },
 		]
@@ -16,7 +36,16 @@ export default class PeopleIndex extends React.Component  {
 			<Table
 				title={'People'}
 				columns={columns}
-				options={{filtering: false}}
+				options={{filtering: false, addRowPosition: 'first'}}
+				editable={{
+					onRowAdd: newData =>
+						new Promise((resolve, reject) => {
+							setTimeout(() => {
+								this.handleCreate(newData);
+								resolve();
+							}, 500);
+						}),
+				}}
 				data={query =>
 					new Promise((resolve, reject) => {
 						var filters
@@ -44,7 +73,6 @@ export default class PeopleIndex extends React.Component  {
 									page: result.page - 1,
 									totalCount: result.total,
 								});
-								window.breadcrumb.addBreadcrumb(result.breadcrumb);
 							})
 					})
 				}

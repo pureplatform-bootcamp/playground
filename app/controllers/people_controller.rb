@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
     render json: {results: @results}, status: :ok
   end
   def index
-    @people = Person.all
+    @people = Person.paginate(page: params[:page], per_page: params[:per_page])
   end
   def dead
     @dead = Person.where.not(death_date: nil)
