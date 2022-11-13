@@ -3,18 +3,14 @@ class AddressesController < ApplicationController
   def create
     address = Address.new(address_params)
     unless address.save
-      raise address.errors.full_messages
+      raise address.errors.full_messages.to_sentence
     end
-    render json: { success: true, address: address }, status: :ok
-  end
-
+      render json: {success: true}, status: :ok  
+    end
   def update
     address = Address.find(params[:id])
-    unless address == true
-      raise address.errors.full_messages
-    end
     address.update(address_params)
-    render json: { success: true, address: address }, status: :ok
+    render json: {success: true}, status: :ok  
   end
 
   def destroy
@@ -31,6 +27,6 @@ class AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address).permit(:person_id, :address1, :city, :state, :zip_code)
+    params.require(:address).permit(:person_id, :address1, :address2, :city, :state, :zip_code, :primary)
   end
 end

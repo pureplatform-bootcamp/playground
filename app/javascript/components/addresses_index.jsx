@@ -1,7 +1,57 @@
 import React from "react";
 import Table from './shared/tables/material_table';
-
+import $ from "jquery";
 export default class AdressesIndex extends React.Component {
+	
+	handleCreate = (newData) =>{
+		let self = this;
+		const data ={address: {person_id: newData.person_id , address1: newData.address1 , address2: newData.address2 , city: newData.city , state: newData.state, zip_code: newData.zip_code , primary: newData.primary}}
+		$.ajax({
+			url: '/addresses',
+			type: 'POST',
+			data: data,
+			dataType: 'json',
+			success: function (response){
+				console.log('success')
+			},
+			error: function (response){
+				console.log(response.responseJSON.error)
+			},
+		});
+	}
+	handleUpdate = (newData, oldData) =>{
+		let self = this;
+		const data1=  oldData.id;
+		const data={address: {person_id: newData.person_id , address1: newData.address1 , address2: newData.address2 , city: newData.city , state: newData.state, zip_code: newData.zip_code , primary: newData.primary}};
+		$.ajax({
+		url: '/addresses/'+data1,
+		type: 'PATCH',
+		data: data,
+		dataType: 'json',
+		success: function (response){
+		console.log('success')
+		},
+		error: function (response){
+		console.log(response.responseJSON.error)
+		},
+		});
+	}
+	handleDelet = (oldData) =>{
+		let self = this;
+		const data=  oldData.id;
+		$.ajax({
+		url: '/addresses/'+data,
+		type: 'DELETE',
+		data: data,
+		dataType: 'json',
+		success: function (response){
+		console.log('success')
+		},
+		error: function (response){
+		console.log(response.responseJSON.error)
+		},
+		});
+	}
     render() {
 		const columns = [
 			{ title: 'Person id', field: 'person_id' },
@@ -12,12 +62,37 @@ export default class AdressesIndex extends React.Component {
 			{ title: 'Zip code', field: 'zip_code' },
             { title: 'Primary', field: 'primary' },
 
-		]
+		] 
 		return (
 			<Table
 				title={'Addresses'}
 				columns={columns}
-				options={{filtering: false}}
+				options={{filtering: false, addRowPosition: 'first'}}
+				editable={{
+					onRowAdd: newData =>
+						new Promise((resolve, reject) => {
+							setTimeout(() => {
+								/* setData([...data, newData]); */
+			                    this.handleCreate(newData);
+								resolve();
+							}, 1000);
+						}),
+					onRowUpdate: (newData, oldData) =>
+						new Promise((resolve, reject) => {
+							setTimeout(() => {
+								this.handleUpdate(newData, oldData);
+								resolve();
+							}, 1000);
+						}),
+						onRowDelete: oldData =>
+						new Promise((resolve, reject) => {
+						  setTimeout(() => {
+							this.handleDelet(oldData);
+							
+							resolve()
+						  }, 1000)
+						}),
+				}}
 				data={query =>
 					new Promise((resolve, reject) => {
 						var filters
@@ -45,7 +120,6 @@ export default class AdressesIndex extends React.Component {
 									page: result.page - 1,
 									totalCount: result.total,
 								});
-								window.breadcrumb.addBreadcrumb(result.breadcrumb);
 							})
 					})
 				}
