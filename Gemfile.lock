@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 05a5e1e811d693e64cc9e3067ca1affd826be96e
+  revision: 97af5a0f093138e717819e0df998ddd0cdb95d28
   branch: main
   specs:
     faker (3.0.0)
@@ -202,7 +202,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.5)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   arm64-darwin-21
