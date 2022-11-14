@@ -1,3 +1,4 @@
+json.id p.id
 json.person_id p.person_id
 json.company_name p.company_name
 json.industry p.industry
