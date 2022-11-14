@@ -1,8 +1,31 @@
 import React from 'react';
 import Table from './shared/tables/material_table';
+import $ from "jquery";
 
 export default class CareersIndex extends React.Component  {
-
+	handleCreate = (newData) => {
+		const data = {
+		  careers: {
+			person_id: newData.person_id,
+			company_name: newData.company_name,
+			industry: newData.industry,
+			title: newData.title,
+			date_started: newData.date_started
+		  },
+		};
+		$.ajax({
+		  url: "/careers",
+		  type: "POST",
+		  data: data,
+		  dataType: "json",
+		  success: function (response) {
+			console.log("success");
+		  },
+		  error: function (response) {
+			console.log(response.responseJSON.error);
+		  },
+		});
+	  };
 	render() {
 		const columns = [
 			{ title: 'Person id', field: 'person_id' },
@@ -10,14 +33,21 @@ export default class CareersIndex extends React.Component  {
 			{ title: 'Industry', field: 'industry' },
 			{ title: 'Title', field: 'title' },
 			{ title: 'Date started', field: 'date_started' },
-			{ title: 'Annual wage', field: 'annual_wage' },
-			{ title: 'Date ended', field: 'date_ended' },
 		]
 		return (
 			<Table
 				title={'Careers'}
 				columns={columns}
 				options={{filtering: false}}
+				editable={{
+					onRowAdd: (newData) =>
+                    new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                    this.handleCreate(newData);
+                    resolve();
+                  }, 1000);
+                 }),
+				}}
 				data={query =>
 					new Promise((resolve, reject) => {
 						var filters
@@ -53,4 +83,3 @@ export default class CareersIndex extends React.Component  {
 		)
 	}
 }
-
