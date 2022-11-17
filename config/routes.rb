@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  resources :books
+  resources :books, only: [:index, :create, :update, :destroy]
   resources :careers
 
   get "people/search/:search_term", to: "people#search"

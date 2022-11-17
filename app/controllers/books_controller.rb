@@ -1,5 +1,9 @@
 class BooksController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
+
+  def index
+    @books = Book.all
+  end
 
   def new
     @book = Book.new
@@ -17,9 +21,28 @@ class BooksController < ApplicationController
     end
   end
 
+  def update
+    @book = Book.find(params[:id])
+
+    if @book.present?
+      @book.update(book_params)
+      render json: @book, status: :ok
+    end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+
+    if @book.present?
+      @book.delete
+      render json: {}, status: :no_content
+    end
+  end
+
   private
     def book_params
-      params.permit(:book_name)
+      #params.permit(:book_name)
+      params.require(:book).permit(:book_name)
     end
 
 end
