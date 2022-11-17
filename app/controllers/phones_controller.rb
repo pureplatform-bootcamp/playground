@@ -1,25 +1,25 @@
 class PhonesController < ApplicationController
   def index
-    @phone = Phone.all
+    @phones = Phone.all
   end
 
   def update
-    @phone = Phone.find(params[:id])
-    @phone.update(person_id: params[:phone][:person_id], phone_number: params[:phone][:phone_number], phone_type: params[:phone][:phone_type], primary: params[:phone][:primary])
+    @phones = Phone.find(params[:id])
+    @phones.update(person_id: params[:phone][:person_id], phone_number: params[:phone][:phone_number], phone_type: params[:phone][:phone_type], primary: params[:phone][:primary])
     render json: { success: true }, status: :ok
   end
 
   def create
     @phone = Phone.new(phone_params)
-    unless @phone.save
-      raise @phone.errors.full_messages.to_sentence
+    unless @phones.save
+      raise @phones.errors.full_messages.to_sentence
     end
 
     render json: { success: true }, status: :ok
   end
 
   def destroy
-    @phone = Phone.find(params[:id])
+    @phones = Phone.find(params[:id])
     Phone.destroy(params[:id])
     render json: { success: true }, status: :ok
   end
