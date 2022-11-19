@@ -73,7 +73,11 @@ export default class PhonesIndex extends React.Component {
       <Table
         title={"Phones"}
         columns={columns}
-        options={{ filtering: false, addRowPosition: "first" }}
+        options={{
+          sorting: true,
+          filtering: false,
+          addRowPosition: "first",
+        }}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {

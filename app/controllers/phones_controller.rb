@@ -1,6 +1,8 @@
 class PhonesController < ApplicationController
   def index
-    @phones = Phone.all
+    @phones = Phone.paginate(per_page: params[:per_page], page: params[:page])
+    _sortable = params[:orderBy].present? ? "#{params[:orderBy]} #{orderDirection}" : "created_at desc"
+    @phones = Phone.order(_sortable)
   end
 
   def update
@@ -22,6 +24,12 @@ class PhonesController < ApplicationController
     @phones = Phone.find(params[:id])
     Phone.destroy(params[:id])
     render json: { success: true }, status: :ok
+  end
+
+  private
+
+  def orderDirection
+    %w[asc desc].include?(params[:orderDirection]) ? params[:orderDirection] : "asc"
   end
 
   private
