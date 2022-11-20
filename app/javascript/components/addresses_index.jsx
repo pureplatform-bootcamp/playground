@@ -54,8 +54,8 @@ export default class AdressesIndex extends React.Component {
 	}
     render() {
 		const columns = [
-			{ title: 'Person id', field: 'person_id' },
-			{ title: 'Address1', field: 'address1' },
+			{ title: 'Person id', field: 'person_id'},
+			{ title: 'Address1', field: 'address1'},
 			{ title: 'Address2', field: 'address2' },
 			{ title: 'City', field: 'city' },
 			{ title: 'State', field: 'state' },
@@ -67,7 +67,7 @@ export default class AdressesIndex extends React.Component {
 			<Table
 				title={'Addresses'}
 				columns={columns}
-				options={{filtering: false, addRowPosition: 'first'}}
+				options={{filtering: true, addRowPosition: 'first', sorting: true , search: true}}
 				editable={{
 					onRowAdd: newData =>
 						new Promise((resolve, reject) => {
@@ -98,6 +98,7 @@ export default class AdressesIndex extends React.Component {
 						var filters
 						if (query.filters.length > 0) {
 							filters = query.filters.map((col) => ({field: col.column.field, value: col.value}))
+							
 						}
 						let url = `/addresses.json?`
 						url += 'per_page=' + query.pageSize

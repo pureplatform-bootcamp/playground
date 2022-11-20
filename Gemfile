@@ -48,3 +48,4 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.4.3'
 gem 'react-rails'
+gem 'will_paginate', '~> 3.3'
