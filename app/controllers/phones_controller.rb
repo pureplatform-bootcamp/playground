@@ -3,6 +3,8 @@ class PhonesController < ApplicationController
     @phones = Phone.paginate(per_page: params[:per_page], page: params[:page])
     _sortable = params[:orderBy].present? ? "#{params[:orderBy]} #{orderDirection}" : "created_at desc"
     @phones = Phone.order(_sortable)
+    _filtered = params[filters: [:field, :value]].present? ? Phone.where("lower(person_id) LIKE ?", "#{params[:filters]}") : "null"
+    @phones = Phone.order(_filtered)
   end
 
   def update
@@ -35,6 +37,6 @@ class PhonesController < ApplicationController
   private
 
   def phone_params
-    params.require(:phone).permit(:person_id, :phone_number, :phone_type, :primary)
+    params.require(:phone).permit(:person_id, :phone_number, :phone_type, :primary, filters: [:field, :value])
   end
 end

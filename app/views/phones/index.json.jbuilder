@@ -4,5 +4,6 @@ end
 json.page params[:page] || 1
 json.total @phones.count || 1
 
-json.page params[:orderBy]
-json.page params[:orderDirection]
+json.parse params[:orderBy]
+json.parse params[:orderDirection]
+json.parse params[:filters]

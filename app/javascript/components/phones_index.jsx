@@ -75,7 +75,7 @@ export default class PhonesIndex extends React.Component {
         columns={columns}
         options={{
           sorting: true,
-          filtering: false,
+          filtering: true,
           addRowPosition: "first",
         }}
         editable={{

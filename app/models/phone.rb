@@ -1,5 +1,5 @@
 class Phone < ApplicationRecord
   belongs_to :person
-  scope :ordered_by_person_id_asc, -> { reorder(person_id: :asc) }
-  scope :ordered_by_person_id_desc, -> { reorder(person_id: :desc) }
+  scope :filter_by_person_id, ->(person_id) { where person_id: person_id }
+  accepts_nested_attributes_for :person
 end
